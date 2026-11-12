@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODA — Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement">
+    НОВАЯ КОЛЛЕКЦИЯ УЖЕ ЗДЕСЬ
+</div>
+
+<header>
+    <h2 class="logo">MODA<span>.</span></h2>
+
+    <nav id="nav">
+        <a href="#home">Главная</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О магазине</a>
+    </nav>
+
+    <div class="header-right">
+        <button id="profileOpen">👤 Профиль</button>
+        <button id="cartOpen">🛒 Корзина (<span id="cartCount">0</span>)</button>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <p>ТВОЙ СТИЛЬ — ТВОИ ПРАВИЛА</p>
+        <h1>Открой свой<br><span>новый образ</span></h1>
+        <p>Одежда, обувь и аксессуары на каждый день.</p>
+        <a href="#catalog" class="main-btn">Перейти в каталог →</a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900" alt="Мода">
+</section>
+
+<section class="categories">
+    <button class="category-tile" data-category="Одежда">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500">
+        <span>Одежда</span>
+    </button>
+
+    <button class="category-tile" data-category="Обувь">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
+        <span>Обувь</span>
+    </button>
+
+    <button class="category-tile" data-category="Аксессуары">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500">
+        <span>Аксессуары</span>
+    </button>
+</section>
+
+<section class="catalog" id="catalog">
+    <h2>Наш каталог</h2>
+
+    <input id="search" type="search" placeholder="Поиск товаров...">
+
+    <div class="filters" id="filters">
+        <button class="filter active" data-filter="Все">Все товары</button>
+        <button class="filter" data-filter="Одежда">Одежда</button>
+        <button class="filter" data-filter="Обувь">Обувь</button>
+        <button class="filter" data-filter="Аксессуары">Аксессуары</button>
+    </div>
+
+    <div class="products" id="products"></div>
+</section>
+
+<section class="about" id="about">
+    <h2>Почему MODA?</h2>
+    <p>Находи любимые вещи, выбирай свой стиль и создавай красивые образы!</p>
+</section>
+
+<footer>
+    <h2>MODA.</h2>
+    <p>Твой стиль начинается здесь.</p>
+    <p>© 2026 MODA</p>
+</footer>
+
+<!-- Окно профиля -->
+<div class="overlay" id="profileModal">
+    <div class="modal">
+        <button class="close" data-close="profileModal">✕</button>
+
+        <h2>Мой профиль</h2>
+
+        <div class="avatar" id="avatarPreview">👤</div>
+
+        <label for="avatarUpload" class="upload-label">
+            📷 Выбрать фотографию
+        </label>
+
+        <input type="file" id="avatarUpload" accept="image/*" hidden>
+
+        <label>Имя:
+            <input id="profileName" type="text" placeholder="Твоё имя">
+        </label>
+
+        <label>Телефон:
+            <input id="profilePhone" type="tel" placeholder="+992 ...">
+        </label>
+
+        <button class="main-btn full" id="saveProfile">
+            Сохранить профиль
+        </button>
+
+        <p id="profileMessage">Данные сохраняются в браузере.</p>
+    </div>
+</div>
+
+<!-- Окно корзины -->
+<div class="overlay" id="cartModal">
+    <div class="modal">
+        <button class="close" data-close="cartModal">✕</button>
+
+        <h2>Моя корзина</h2>
+
+        <div id="cartItems">Корзина пустая.</div>
+
+        <h3>Итого: <span id="cartTotal">0</span> сомони</h3>
+
+        <button class="main-btn full" id="orderBtn">
+            Оформить заказ
+        </button>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
